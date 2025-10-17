@@ -1,16 +1,24 @@
 'use client';
+import { useTheme } from 'next-themes';
 import Image from 'next/image'
-import React from 'react'
+
 
 export const Card = () => {
 
-  const handleThemeChange = () => {
-    const currentTheme = document.documentElement.classList.contains("dark")
-        ?"light"
-        :"dark";
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", currentTheme);
-  }
+//   const handleThemeChange = () => {
+//     const currentTheme = document.documentElement.classList.contains("dark")
+//         ?"light"
+//         :"dark";
+//     document.documentElement.classList.toggle("dark");
+//     localStorage.setItem("theme", currentTheme);
+//   }
+
+// there is a better way
+const {theme, setTheme} = useTheme();
+
+const handleThemeChange = () => {
+    setTheme(theme === "dark" ? "light" : "dark")
+}
 
   return (
     <div className='h-screen dark:-bg- w-full flex flex-col items-center justify-center text-black selection:bg-pink-300 font-primary dark:selection:bg-green-400 bg-[#F0F1F3]'>
