@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import clsx from 'clsx'
 import { Brain, FormInputIcon, Search, Send } from 'lucide-react'
