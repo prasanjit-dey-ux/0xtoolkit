@@ -9,7 +9,6 @@ export const SelectedTrackingSources = () => {
   return (
     <div className='max-w-5xl mx-auto min-h-screen flex justify-center items-center px-40 font-primary selection:bg-orange-200'>
         <div className='bg-white rounded-2xl border border-neutral-300 [box-shadow:0px_11px_24px_0px_rgba(135,135,135,0.10),0px_45px_45px_0px_rgba(135,135,135,0.09),0px_100px_60px_0px_rgba(135,135,135,0.05),0px_178px_71px_0px_rgba(135,135,135,0.01),0px_278px_78px_0px_rgba(135,135,135,0.00)] '>
-        {/*Stepper */}
           <div className=' flex gap-4 items-center p-4 border-b border-neutral-300 text-neutral-950'>
             <Image 
             src="/icons/tick_black.svg"
