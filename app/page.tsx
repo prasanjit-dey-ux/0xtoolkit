@@ -5,7 +5,7 @@ import { Grid } from "./components/grid";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       {/* <Card/> */}
       {/* <ModeToggle /> */}
       <Grid />
