@@ -2,6 +2,7 @@
 import React from 'react'
 import clsx from 'clsx';
 import { Btn1, ToggleBtn } from '@/ui/button1';
+import { Hovercard } from '@/ui/card';
 
 const Card = ({children, className}: {children:React.ReactNode, className?: string}) => {
     return <div className={clsx('bg-white h-80 flex justify-center items-center',
@@ -22,7 +23,10 @@ export default function ShowCase() {
             </Card>
             <Card>
                 <ToggleBtn />   
-            </Card>         
+            </Card>
+            <Card className='group'>
+                 <Hovercard />   
+            </Card>      
         </div>
     </div>
   )
