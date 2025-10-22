@@ -2,7 +2,8 @@
 import React from 'react'
 import clsx from 'clsx';
 import { Btn1, ToggleBtn } from '@/ui/button1';
-import { Hovercard } from '@/ui/card';
+import { Hovercard, PolarCard } from '@/ui/card';
+import { Car } from 'lucide-react';
 
 const Card = ({children, className}: {children:React.ReactNode, className?: string}) => {
     return <div className={clsx('bg-white h-80 flex justify-center items-center',
@@ -26,7 +27,13 @@ export default function ShowCase() {
             </Card>
             <Card className='group'>
                  <Hovercard />   
-            </Card>      
+            </Card>
+            <Card>
+                <PolarCard />    
+            </Card>  
+        </div>
+        <div className='grid grid-cols-3'>
+            
         </div>
     </div>
   )
