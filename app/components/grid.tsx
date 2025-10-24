@@ -7,11 +7,11 @@ import Image from 'next/image'
 export const Grid = () => {
 
   return (
-    <div className='max-w-5xl py-20 mx-auto min-h-screen border-x border-neutral-200 bg-gray-100 '>
+    <div className='max-w-5xl py-20 mx-auto min-h-screen border-x border-neutral-200 bg-gray-100 selection:bg-red-400 selection:text-white '>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 divide-x divide-y divide-neutral-200'>
         <Card className='lg:col-span-2'>
             <div className='flex flex-col justify-center items-center w-full p-4'>
-            <h1 className='text-red-400 font-medium text-xs'>Features</h1>
+            <h1 className='text-red-400 font-medium text-md'>Features</h1>
                 <div className='mt-6 space-y-4'>
                     <div className='text-3xl font-medium tracking-tight font-primary text-center'>Built for Agentic Intelligence</div>
                     <p className='w-100 text-center text-sm text-neutral-500'>Build, test and deploy AI agents with a powerful visual interface designed for technical teams</p> 
@@ -86,11 +86,11 @@ const MainSkeleton = ({className} : {className?: string}) => {
             <p className='text-sm text-white'>{text}</p>
         </div>
         
-        <div className='rounded-full size-5'>
+        <div className='rounded-full size-6 flex justify-center'>
             <Image
             src="/avatar.png"
-            height={20}
-            width={20}
+            height={24}
+            width={24}
             alt='avatar'
             className='rounded-full'
             />
