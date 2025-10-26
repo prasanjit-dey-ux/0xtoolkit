@@ -2,13 +2,12 @@
 import React, { useCallback, useState } from 'react'
 import clsx from 'clsx'
 import { Upload, Clipboard, X } from "lucide-react";
-import { useDropzone } from 'react-dropzone'; 
+import { useDropzone } from 'react-dropzone';
 
 export default function UserInfo(){
-    
     const [profileImage, setProfileImage] = useState('');
     const [bannerImage, setBannerImage] = useState('');
-    const [username, setUsername] = useState('johndoe');
+    const [username, setUsername] = useState('');
     const [displayName, setDisplayName] = useState('');
     const [bio, setBio] = useState('');
 
@@ -23,6 +22,8 @@ export default function UserInfo(){
                     name='username'
                     type='text'
                     placeholder='Enter your username'
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
                     />
                 </Group>  
                 <Group>
@@ -33,6 +34,8 @@ export default function UserInfo(){
                         name='displayname'
                         type='text'
                         placeholder='Enter your display name'
+                        value={displayName}
+                        onChange={e => setDisplayName(e.target.value)}
                         />
                 </Group>
                 <Group>
@@ -55,6 +58,8 @@ export default function UserInfo(){
                     <Bio
                     name='bio'
                     placeholder='Enter your bio'
+                    value={bio}
+                    onChange={e => setBio(e.target.value)}
                     />
                 </Group>
                 <Button className='w-full'>Submit</Button>                         
@@ -69,16 +74,17 @@ export default function UserInfo(){
                 'py-12 md:py-0',
                 'md:sticky md:top-0 md:h-screen',
                 'mask-radial-from-60%',
-                'max-w-sm w-full',
+                // 'max-w-sm w-full',
                 '[background-size:10px_10px]'
                 )}>
-                    <ProfileCard
-                    profileImage={ProfileImageCard}
-                    bannerImage={BannerImageCard}
+                    
+                <ProfileCard
+                    profileImage={profileImage}
+                    bannerImage={bannerImage}
                     username={username}
                     displayName={displayName}
                     bio={bio}
-                    />
+                />
             </div>
         </div>
         
@@ -99,9 +105,55 @@ const ProfileCard = ({
     bio: string;
 }) => {
     return (
-        <div className="border bg-white border-neutral-300 w-80 h-90 rounded-2xl overflow-hidden">
-            <div className='border-b border-neutral-300 h-35 bg-blue-100'></div>
-            <div className='rounded-full size-20 bg-black mx-2'></div>
+        <div className={clsx("bg-neutral-50 relative w-90 h-100 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-transform duration-300",
+          "border border-transparent bg-gradient-to-b from-white to-gray-50",
+"outline-[1px] outline-gray-200 hover:outline-gray-300",
+"hover:scale-[1.02] hover:shadow-2xl hover:shadow-neutral-400"
+        )}>
+            <div className='relative h-34 bg-neutral-300 '>
+                {bannerImage && (
+                    <img 
+                    src={bannerImage}
+                    alt="Banner" 
+                    className='w-full h-full object-cover'
+                    />
+                )}
+            </div>
+            <div className='relative px-2'>
+            <div className='absolute outline-4 outline-white -top-12 left-1 rounded-full size-22  mx-2 bg-neutral-400 overflow-hidden shadow-sm '>
+                {profileImage ? (
+                    <img
+                    src={profileImage}
+                    alt='Profile'
+                    className='w-full h-full object-cover'
+                    />
+                ): (
+                    <div className='w-full h-full flex items-center justify-center text-white text-2xl font-bold'>
+                        {username ? username[0].toUpperCase() : '?'}
+                    </div>
+                )}
+            </div>
+            </div>
+                
+            {/*Content section*/}
+            <div className='pt-12 pb-6 px-4'>
+                <h2 className='text-2xl font-bold text-neutral-900'>
+                    {displayName || 'Display Name'}
+                </h2>
+                <p className='text-sm text-neutral-500 mt-1'>
+                    @{username || 'username'}
+                </p>
+
+                {/* Divider */}
+                <div className='h-px bg-neutral-200 my-4' />
+                
+                {/* Bio */}
+                <div className='space-y-2'>
+                    <p className='text-xs font-bold text-neutral-800 uppercase tracking-wide'>Bio</p>
+                    <p className='text-sm text-neutral-700 leading-relaxed'>{bio || 'Your bio will appear here. Tell people about yourself!'}
+                    </p>
+                </div>   
+            </div>
         </div>
     )
 
@@ -323,8 +375,6 @@ const ImageUploadZone = ({
     }
 
     return (
-      
-
         <div {...getRootProps()}
         className={clsx(
             'overflow-hidden cursor-pointer relative group transition-all',
@@ -360,7 +410,9 @@ const ImageUploadZone = ({
                         isProfile ? 'rounded-full' : 'rounded-lg'
                         )}>
                             {isProfile ? (
-                                <Upload className='w-5 h-5 text-white' />
+                              <div className='flex justify-center items-center bg-white rounded-full p-2'>
+                                <Upload className="text-black w-4 h-4" />
+                                </div>
                             ): (
                                 <div className='flex justify-center items-center bg-white rounded-md gap-1 p-2'>
                                 <Upload className={clsx(isProfile ? 'w-5 h-5' : 'w-4 h-4', 'text-black')} />
@@ -377,7 +429,14 @@ const ImageUploadZone = ({
                     />
                     {!isProfile && (
                         <p className='text-gray-600 text-base text-center px-2'>
-                            {isDragActive ? 'Drop here' : "Drag & Drop or Choose file to upload"}
+                            {/* Drag & Drop or Choose file to upload */}
+                            {isDragActive ? 'Drop here' : (
+                                <>
+                                    Drag & Drop or{' '}
+                                    <span className='text-orange-500 font-medium'>Choose file</span>
+                                    {" "}to upload
+                                </>
+                            )}
                         </p>          
                     )}
                     <p className='text-xs text-neutral-500'>IMG & GIF</p>
