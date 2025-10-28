@@ -3,6 +3,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { Brain, FormInputIcon, Search, Send } from 'lucide-react'
 import Image from 'next/image'
+import { SVGLines } from '../svg-components/svg-lines'
 
 export const Grid = () => {
 
@@ -55,7 +56,9 @@ export const Grid = () => {
                 I forked the Notion Search extension so I can easily paste tokenized doc links into Slack.
             </CardDescription>
             <CardSkeleton className='bg-[radial-gradient(var(--color-neutral-200)_1px,_transparent_1px)]'>
-                <div className='h-full w-full'></div>
+        
+                    <SVGLines />   
+
             </CardSkeleton>
         </Card> 
         </div>
