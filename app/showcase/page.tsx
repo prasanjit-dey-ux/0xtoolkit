@@ -3,7 +3,6 @@ import React from 'react'
 import clsx from 'clsx';
 import { Btn1, ToggleBtn } from '@/ui/button1';
 import { Hovercard, PolarCard } from '@/ui/card';
-import DashboardCard from '@/ui/card';
 
 export const CardBox= ({children, className}: {children:React.ReactNode, className?: string}) => {
     return <div className={clsx('bg-white h-80 flex justify-center items-center',
