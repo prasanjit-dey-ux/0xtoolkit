@@ -1,12 +1,24 @@
+"use client"
 import React from 'react'
 
 export const SVGComponent = () => {
   return (
-    <div className='flex flex-col gap-12 justify-center items-center p-10 bg-white rounded-lg border
+    <div className='flex gap-12 justify-between items-center p-10 bg-white rounded-lg border
     border-neutral-200 shadow-md '>
-        <TopLine />
-        <MidLine />
-        <BottomLine />
+        <div className='flex flex-col justify-between'>
+            <div className='relative text-sm'>
+                <p>Meeting Summarizer</p>
+                <TopLine className='absolute top-2 left-32' />
+            </div>
+            <div className='relative text-sm'>
+                <p>Code Reviewer</p>
+                <MidLine className='absolute top-2 left-32' />
+            </div>
+            <div className='relative text-sm'>
+                <p>Customer Support</p>
+                <BottomLine className='absolute top-2 left-32' />
+            </div>
+        </div>
     </div>
   )
 }
@@ -20,7 +32,7 @@ export const SVG = () => {
         height="24" 
         viewBox="0 0 24 24" 
         fill="currentColor" 
-        className='text-neutral-400'
+        className='text-neutral-400 size-4'
         >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M14.235 19c.865 0 1.322 1.024 .745 1.668a3.992 3.992 0 0 1 -2.98 1.332a3.992 3.992 0 0 1 -2.98 -1.332c-.552 -.616 -.158 -1.579 .634 -1.661l.11 -.006h4.471z" />
@@ -29,28 +41,28 @@ export const SVG = () => {
     )
 }
 
-export const TopLine = () => {
+export const TopLine = (props: React.SVGProps<SVGSVGElement>) => {
     return (
-        <svg width="w-full" height="1" viewBox="0 0 400 1" fill="none" className='text-neutral-400' xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0.5H1018" stroke="currentColor"/>
+<svg width="376" height="25" viewBox="0 0 376 25" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+<path d="M0 0.5H375.5V25" stroke="#282828"/>
 </svg>
+
 
     )
 }
 
-export const MidLine = () => {
+export const MidLine = (props: React.SVGProps<SVGSVGElement>) => {
     return (
-        <svg width="w-full" height="1" viewBox="0 0 400 1" fill="none" className='text-neutral-400' xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0.5H1018" stroke="currentColor"/>
-</svg>
-
+        <svg width="375" height="1" viewBox="0 0 375 1" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M0 0.5H375" stroke="currentColor"/>
+        </svg>
     )
 }   
 
-export const BottomLine = () => {
+export const BottomLine = (props: React.SVGAttributes<SVGSVGElement>) => {
     return (
-        <svg width="w-full" height="1" viewBox="0 0 400 1" fill="none" className='text-neutral-400' xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0.5H1018" stroke="currentColor"/>
+<svg width="376" height="25" viewBox="0 0 376 25" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+<path d="M0 24H375V-2.38419e-07" stroke="#282828"/>
 </svg>
 
     )
