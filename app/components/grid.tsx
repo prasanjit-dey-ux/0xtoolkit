@@ -55,11 +55,12 @@ export const Grid = () => {
             <CardDescription>
                 I forked the Notion Search extension so I can easily paste tokenized doc links into Slack.
             </CardDescription>
-            <CardSkeleton className='bg-[radial-gradient(var(--color-neutral-200)_1px,_transparent_1px)]'>
-        
-                    <SVGLines />   
-
+            <CardSkeleton className='bg-[radial-gradient(var(--color-neutral-200)_1px,_transparent_1px)] grid grid-cols-2 '>
+                    <div className='w-full pr-34 py-20 pl-10 bg-blue-200'>
+                    <SVGLines />  
+                    </div>
             </CardSkeleton>
+
         </Card> 
         </div>
         
