@@ -1,5 +1,6 @@
 'use client'
 
+import { div } from "motion/react-client";
 import { SVG } from "./svg1";
 import { motion } from "motion/react"
 
@@ -47,7 +48,7 @@ export const SVGLines = () => {
           <BottomLine className="absolute -top-4 left-30" />
         </div>
       </div>
-      <div className="size-12 -translate-x-128 rounded-sm bg-neutral-100 p-px overflow-hidden relative z-20">
+      <div className="size-12 -translate-x-8 rounded-sm bg-neutral-100 p-px overflow-hidden relative z-20">
         <div className="h-full w-full relative z-20 bg-white rounded-[3px] flex items-center justify-center">
             <SVG />
         </div>
@@ -57,6 +58,16 @@ export const SVGLines = () => {
     </div>
   );
 };
+
+export const SVGTree = () => {
+    return (
+        <div>
+            <HorzLine />
+
+        </div>
+    )
+}
+
 
 
 
@@ -161,5 +172,39 @@ export const BottomLine = (props: React.SVGAttributes<SVGSVGElement>) => {
 
     )
 }   
+
+export const HorzLine = (props: React.SVGProps<SVGSVGElement>) => {
+    return (
+        <svg width="376" height="1" viewBox="0 0 376 1" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-400" {...props}>
+        <path d="M0 0.5H240" stroke="url(#line-mid-gradient)"/>
+        <defs>
+    <motion.linearGradient
+        gradientUnits="userSpaceOnUse"
+        id="line-mid-gradient"
+        initial={{
+            x1: "0%",
+            x2: "10%"
+        }}
+        animate={{
+            x1:"90%",
+            x2: "100%"
+        }}
+        transition={{
+            duration: 2,
+            repeat: Infinity, 
+            repeatType: "loop",
+            ease: "linear",
+        }}
+    >
+        <stop stopColor="var(--color-neutral-200)" />
+        <stop offset="0.33" stopColor="#4f95ff" />
+        <stop offset="0.66" stopColor="#4f95ff" />
+        <stop offset="1" stopColor="var(--color-neutral-200)" />       
+    </motion.linearGradient>    
+</defs>
+</svg>
+    )
+}   
+
 
 
