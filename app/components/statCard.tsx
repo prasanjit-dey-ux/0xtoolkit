@@ -5,58 +5,59 @@
 import clsx from "clsx"
 
 
-// type StateProp = {
-//     children? : React.ReactNode;
-//     className?: string;
-// }
+type StateProp = {
+    children? : React.ReactNode;
+    className?: string;
+}
 
-// export const StatCard = () => {
-//   return (
-//     <div className=' bg-white border border-slate-200 p-4 rounded-2xl w-100'>
-//         <StatHeader>
-//             Leads Contacted
-//         </StatHeader>
-//         <StatValue />
-//         <div className='w-full h-0.5 rounded-full my-4 bg-neutral-200'></div>
-//         <StatLoader / >
-//     </div>
-//   )
-// }
-
-
-// const StatHeader = ({children, className}: StateProp) => {
-//     return <h1 className='font-primary text-gray-800 tracking-tight'>
-//         {children}
-//     </h1>
-// }
-
-// const StatValue = () => {
-//     return (
-//         <div className='flex justify-between items-center mt-4'>
-//             <h1 className='font-[Inter] text-5xl font-medium text-gray-900'>1,234</h1>
-//             <div className='flex gap-2 justify-between items-center'>
-//                 <p className='text-gray-600'>targer:</p>
-//                 <div className='px-2 py-1 text-gray-900 bg-slate-100 border border-slate-200 rounded-lg'>5000</div>
-//             </div>
-
-//         </div>
-//     )
-// }
-
-// const StatLoader = () => {
-//         return (
-//         <div className='w-full h-4 bg-slate-200 rounded-full'>
-//             <div className='h-4 bg-black rounded-full w-30'>
-//                 <div className='bg-gray-50 rounded-md absolute z-20 px-2 py-1 border border-slate-200 text-md '>drag</div>
-//             </div>
-
-//         </div>
-//     )
-// }
+export const StatCard = () => {
+  return (
+    <div className=' bg-white border border-slate-200 p-4 rounded-2xl w-100'>
+        <StatHeader>
+            Leads Contacted
+        </StatHeader>
+        <StatValue />
+        <div className='w-full h-0.5 rounded-full my-4 bg-neutral-200'></div>
+        <Button />
+        <StatLoader / >
+    </div>
+  )
+}
 
 
+const StatHeader = ({children, className}: StateProp) => {
+    return <h1 className='font-primary text-gray-800 tracking-tight'>
+        {children}
+    </h1>
+}
 
-import { useState } from "react"
+const StatValue = () => {
+    return (
+        <div className='flex justify-between items-center mt-4'>
+            <h1 className='font-[Inter] text-5xl font-medium text-gray-900'>1,234</h1>
+            <div className='flex gap-2 justify-between items-center'>
+                <p className='text-gray-600'>targer:</p>
+                <div className='px-2 py-1 text-gray-900 bg-slate-100 border border-slate-200 rounded-lg'>5000</div>
+            </div>
+
+        </div>
+    )
+}
+
+const StatLoader = () => {
+        return (
+        <div className='w-full h-4 bg-slate-200 rounded-full'>
+            <div className='h-4 bg-black rounded-full w-30'>
+                <div className='bg-gray-50 rounded-md absolute z-20 px-2 py-1 border border-slate-200 text-md '>drag</div>
+            </div>
+
+        </div>
+    )
+}
+
+
+
+{/* import { useState } from "react"
 
 export const StatCard = () => {
 
@@ -67,7 +68,7 @@ export const StatCard = () => {
     )}>
         <Button />
     </div>
-}
+} */}
 
 const Button = () => {
         return <div className="flex justify-between items-center gap-4">
