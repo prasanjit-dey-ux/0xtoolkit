@@ -18,8 +18,10 @@ export const StatCard = () => {
         </StatHeader>
         <StatValue />
         <div className='w-full h-0.5 rounded-full my-4 bg-neutral-200'></div>
-        <Button />
+        
         <StatLoader / >
+
+   
     </div>
   )
 }
