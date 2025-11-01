@@ -26,7 +26,7 @@ export const StatCard = () => {
 
 
 const StatHeader = ({children, className}: StateProp) => {
-    return <h1 className='font-primary text-gray-800 tracking-tight'>
+    return <h1 className={clsx('font-primary text-gray-800 tracking-tight', className)}>
         {children}
     </h1>
 }
