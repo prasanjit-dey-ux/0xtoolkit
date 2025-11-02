@@ -69,7 +69,7 @@ export const StatCard = () => {
     </div>
 } */}
 
-const Button = () => {
+{/* const Button = () => {
         return <div className="flex justify-between items-center gap-4">
         <div className="bg-blue-600/20 px-4 py-2 outline outline-dashed outline-blue-600 hover:bg-blue-400/50 cursor-pointer ">
         <p className="font-primary text-blue-600 w-full h-full ">Click Me</p>
@@ -78,4 +78,4 @@ const Button = () => {
             <p className="font-primary w-full h-full text-blue-600 ">Connect</p>
         </div>
     </div>
-}
+} */}
