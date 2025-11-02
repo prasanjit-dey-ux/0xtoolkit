@@ -18,17 +18,14 @@ export const StatCard = () => {
         </StatHeader>
         <StatValue />
         <div className='w-full h-0.5 rounded-full my-4 bg-neutral-200'></div>
-        
         <StatLoader / >
-
-   
     </div>
   )
 }
 
 
 const StatHeader = ({children, className}: StateProp) => {
-    return <h1 className={clsx('font-primary text-gray-800 tracking-tight', className)}>
+    return <h1 className='font-primary text-gray-800 tracking-tight'>
         {children}
     </h1>
 }
@@ -50,7 +47,7 @@ const StatLoader = () => {
         return (
         <div className='w-full h-4 bg-slate-200 rounded-full'>
             <div className='h-4 bg-black rounded-full w-30'>
-                <div className='bg-gray-50 rounded-md absolute z-20 px-2 py-1 border border-slate-200 text-md '>drag</div>
+
             </div>
 
         </div>
